@@ -1,0 +1,98 @@
+<!--
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* * * * * * * * * * * productos otros bancos* * * * * * * * * * * 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+-->
+
+<mat-button-toggle (click)="toggle1()" id="btca" class ="toggle-boton">Cuentas de Ahorro</mat-button-toggle>
+
+
+<div class="div-productos-banco sec_tarjetas" *ngIf="show">
+
+  <div class = "loop1" *ngFor = "let prod of productos; let i=count">
+
+    <!--Si los productos pertenecen a otro banco-->
+    <div *ngIf = "prod.accountInformation.bank !== 'BANCO_1' && prod.accountInformation.productType === 'DEPOSIT_ACCOUNT'"> 
+    <!--tarjeta otro banco-->
+      <div class="tarjeta">
+        <mat-card>
+          <!--Si el tipo de producto consultado es cuenta de ahorro-->
+          <div class="div-card-icon">
+            <i class = "material-icons icono-tarjeta">local_atm</i>
+            <button mat-button class = "menu2 boton-azul">Ver detalle <i class = "material-icons icono-azul">keyboard_arrow_right</i></button>
+          </div>
+          <mat-card-title>Cuenta de Ahorros</mat-card-title>
+          <mat-card-subtitle>Nro. {{prod.accountInformation.accountIdentifier}}</mat-card-subtitle>
+          <mat-card-subtitle class="saldo-tarjeta">Saldo</mat-card-subtitle>
+          <mat-card-title class="titulo-azul">${{prod.productAccountBalances.saldo_disponible.amount}}</mat-card-title>
+          <div class="fila">
+            <div class="columna">
+              <mat-card-subtitle class="saldo-sub">En Bolsillos:</mat-card-subtitle>
+              <mat-card-content class="texto-sub">${{prod.productAccountBalances.saldo_canje_72_horas.amount}}</mat-card-content>
+            </div>
+            <div class="columna">
+              <mat-card-subtitle class="saldo-sub">Saldo Total:</mat-card-subtitle>
+              <mat-card-content class="texto-sub">${{prod.productAccountBalances.saldo_actual.amount}}</mat-card-content>
+            </div>
+          </div>
+          <mat-card-footer></mat-card-footer>
+        </mat-card>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<mat-button-toggle (click)="toggle2()" id="bttc" class ="toggle-boton">Tarjetas de Crédito</mat-button-toggle>
+
+
+<div class="div-productos-banco sec_tarjetas" *ngIf="show2">
+
+  <div class = "loop1" *ngFor = "let prod of productos; let i=count">
+
+    <!--Si los productos pertenecen a otro banco-->
+    <div *ngIf = "prod.accountInformation.bank !== 'BANCO_1' && prod.accountInformation.productType === 'CREDIT_CARD'"> 
+    <!--tarjeta otro banco-->
+      <div class="tarjeta">
+        <mat-card>
+          <!--Si la tarjeta es VISA-->
+          <div class="div-card-icon" *ngIf = "prod.id[0]==='4'" >
+            <div class = "icono-tarjeta-visa">
+              <button mat-button class = "menu2 boton-azul">Ver detalle <i class = "material-icons icono-azul">keyboard_arrow_right</i></button>
+            </div>
+          </div>
+
+          <!--Si la tarjeta es MasterCard-->
+          <div class="div-card-icon" *ngIf = "prod.id[0]==='5'">
+            <div class = "icono-tarjeta-master">
+              <button mat-button class = "menu2 boton-azul">Ver detalle <i class = "material-icons icono-azul">keyboard_arrow_right</i></button>
+            </div>
+          </div>
+          <mat-card-title>Tarjeta de Crédito</mat-card-title>
+          <mat-card-subtitle>Nro. {{prod.accountInformation.accountIdentifier}}</mat-card-subtitle>
+          <mat-card-subtitle class="saldo-tarjeta">Cupo Disponible:</mat-card-subtitle>
+          <mat-card-title class="titulo-azul">${{prod.productAccountBalances.cupo_disponible_avances_pesos.amount}}</mat-card-title>
+          <div class="fila">
+            <div class="columna">
+              <mat-card-subtitle class="saldo-sub">Fecha de Corte:</mat-card-subtitle>
+              <mat-card-content class="texto-sub">{{prod.dueDate}}</mat-card-content>
+            </div>
+            <div class="columna">
+              <mat-card-subtitle class="saldo-sub">Total gastado:</mat-card-subtitle>
+              <mat-card-content class="texto-sub">${{prod.productAccountBalances.cupo_total.amount - prod.productAccountBalances.cupo_disponible_avances_pesos.amount}}</mat-card-content>
+            </div>
+          </div>
+          <mat-card-footer></mat-card-footer>
+        </mat-card>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

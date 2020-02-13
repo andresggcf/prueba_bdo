@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/*Importamos la base de datos de las cuentas*/
+//import data  from './data/data.json'; 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pruebas-BDO';
+
+  ngOnInit(): void {
+  }
+  
 }

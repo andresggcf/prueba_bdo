@@ -1,0 +1,186 @@
+svg.material-icons {
+    height: 24px;
+    width: auto;
+  }
+
+  .app-card, .app-otros-card{
+      width: 80%;
+  }
+  
+  svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+  }
+  
+  .card svg.material-icons path {
+    fill: #888;
+  }
+  
+  div:empty, .loop1:empty, .if2:empty, .if2:empty{
+    display:none;
+  }
+  
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+  
+  .github-star-badge .material-icons {
+    height: 16px;
+    width: 16px;
+    margin-right: 4px;
+  }
+  
+  .icono-tarjeta{
+    font-size: 32px;
+    margin-bottom: 25px;
+    margin-top: 5px;
+    color: rgb(20, 121, 54);
+  }
+  
+  .menu2{
+    display:inline-block;
+    margin-right:5px;
+  }
+  
+  .boton-azul{
+    color: #1673E0;
+    position: absolute;
+    right: 1px;
+    margin-right: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .icono-azul{
+    color: #1673E0;
+    font-size: 22px;
+  }
+  
+  .saldo-tarjeta{
+    margin-bottom: 10px;
+  }
+  
+  .columna{
+    margin-top:15px;
+    float: left;
+    width: 50%;
+  }
+  
+  .mat-card{
+    width: 280px;
+    height: 290px;
+    margin-bottom: 15px;
+    background-color: #fff;
+  }
+  
+  .saldo-sub{
+    margin-bottom: 0px;
+  }
+  
+  .texto-sub{
+    font-weight: 500;
+  }
+  
+  .fila{
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+  }
+  
+  .icono-tarjeta-visa{
+    height: 32px;
+    width:100%;
+    background-image: url("../card_img/visa.png");
+    background-repeat: no-repeat;
+    margin-bottom: 25px;
+    margin-top: 5px;
+  }
+  
+  .icono-tarjeta-master{
+    height: 32px;
+    width:100%;
+    background-image: url("../card_img/master.png");
+    background-repeat: no-repeat;
+    margin-bottom: 25px;
+    margin-top: 5px;
+  }
+  
+  .titulo-azul{
+    color: #01307A;
+    font-weight: 500;
+  }
+  .toggle-boton{
+    width: 100%;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .div-tarjeta{
+    display: grid;
+    grid-gap: 5px;
+  }
+  
+  .tarjeta{
+      margin: auto;
+  }
+  
+  .ng-star-inserted{
+    margin: auto;
+    padding: 2px;
+  }
+  
+  .ng-star-inserted:empty{
+    padding-bottom: -20px;
+  }
+  
+  .div-productos-banco{
+    padding: 8px 8px;
+    margin: -15px 0px 15px 0px;
+    background-color: rgb(231, 231, 231);
+  }
+  
+  .sec_tarjetas {
+    display: grid;
+    grid-auto-rows: minmax(125px, auto);
+    grid-gap: .5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+  }
+  
+  
+  /* Responsive Styles */
+  @media only screen and (max-width: 1040px) {
+    .sec_tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2px;
+      }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .boton-azul{
+      margin-right: 0px;
+    }
+  
+    .span_3_of_3, .span_2_of_3, .span_1_of_3 { 
+      width: 100%; 
+      
+    }
+  
+    .sec_tarjetas {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 2px;
+    }
+
+    .toggle-boton{
+        min-width: 286.766px;
+        height: 48px;
+    }
+  
+  }
+  
+  @media screen and (max-width: 575px) {
+  
+    .boton-azul{
+      margin-right: 0px;
+    }
+  }
