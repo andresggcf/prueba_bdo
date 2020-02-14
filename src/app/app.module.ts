@@ -13,6 +13,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { OtrosCardComponent } from './otros-card/otros-card.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+import { productos } from './productos';
 
 
 
@@ -31,9 +34,12 @@ import { OtrosCardComponent } from './otros-card/otros-card.component';
     MatButtonModule,
     MatSlideToggleModule,
     MatButtonToggleModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCheckboxModule
   ],
-  providers: [],
+  providers: [ 
+    { provide: 'PRODUCTOS', useValue: productos }   
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,7 +6,7 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 -->
 
-<mat-button-toggle (click)="toggle1()" id="btca" class ="toggle-boton">Cuentas de Ahorro</mat-button-toggle>
+<mat-button-toggle (click)="toggle1()" id="btca" class ="toggle-boton">Cuentas de Ahorro ({{cuentas}})</mat-button-toggle>
 
 
 <div class="div-productos-banco sec_tarjetas" *ngIf="show">
@@ -26,15 +26,15 @@
           <mat-card-title>Cuenta de Ahorros</mat-card-title>
           <mat-card-subtitle>Nro. {{prod.accountInformation.accountIdentifier}}</mat-card-subtitle>
           <mat-card-subtitle class="saldo-tarjeta">Saldo</mat-card-subtitle>
-          <mat-card-title class="titulo-azul">${{prod.productAccountBalances.saldo_disponible.amount}}</mat-card-title>
+          <mat-card-title class="titulo-azul">{{prod.productAccountBalances.saldo_disponible.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</mat-card-title>
           <div class="fila">
             <div class="columna">
               <mat-card-subtitle class="saldo-sub">En Bolsillos:</mat-card-subtitle>
-              <mat-card-content class="texto-sub">${{prod.productAccountBalances.saldo_canje_72_horas.amount}}</mat-card-content>
+              <mat-card-content class="texto-sub">{{prod.productAccountBalances.saldo_canje_72_horas.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</mat-card-content>
             </div>
             <div class="columna">
               <mat-card-subtitle class="saldo-sub">Saldo Total:</mat-card-subtitle>
-              <mat-card-content class="texto-sub">${{prod.productAccountBalances.saldo_actual.amount}}</mat-card-content>
+              <mat-card-content class="texto-sub">{{prod.productAccountBalances.saldo_actual.amount | currency:'COP':'symbol-narrow':'1.2-2' }}</mat-card-content>
             </div>
           </div>
           <mat-card-footer></mat-card-footer>
@@ -48,7 +48,7 @@
 </div>
 
 
-<mat-button-toggle (click)="toggle2()" id="bttc" class ="toggle-boton">Tarjetas de Crédito</mat-button-toggle>
+<mat-button-toggle (click)="toggle2()" id="bttc" class ="toggle-boton">Tarjetas de Crédito ({{tarjetas}})</mat-button-toggle>
 
 
 <div class="div-productos-banco sec_tarjetas" *ngIf="show2">
@@ -76,7 +76,7 @@
           <mat-card-title>Tarjeta de Crédito</mat-card-title>
           <mat-card-subtitle>Nro. {{prod.accountInformation.accountIdentifier}}</mat-card-subtitle>
           <mat-card-subtitle class="saldo-tarjeta">Cupo Disponible:</mat-card-subtitle>
-          <mat-card-title class="titulo-azul">${{prod.productAccountBalances.cupo_disponible_avances_pesos.amount}}</mat-card-title>
+          <mat-card-title class="titulo-azul">{{prod.productAccountBalances.cupo_disponible_avances_pesos.amount | currency:'COP':'symbol-narrow':'1.2-2'}}</mat-card-title>
           <div class="fila">
             <div class="columna">
               <mat-card-subtitle class="saldo-sub">Fecha de Corte:</mat-card-subtitle>
@@ -84,7 +84,7 @@
             </div>
             <div class="columna">
               <mat-card-subtitle class="saldo-sub">Total gastado:</mat-card-subtitle>
-              <mat-card-content class="texto-sub">${{prod.productAccountBalances.cupo_total.amount - prod.productAccountBalances.cupo_disponible_avances_pesos.amount}}</mat-card-content>
+              <mat-card-content class="texto-sub">{{prod.productAccountBalances.cupo_total.amount - prod.productAccountBalances.cupo_disponible_avances_pesos.amount | currency:'COP':'symbol-narrow':'1.2-2'}}</mat-card-content>
             </div>
           </div>
           <mat-card-footer></mat-card-footer>

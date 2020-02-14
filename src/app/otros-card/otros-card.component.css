@@ -1,4 +1,13 @@
-svg.material-icons {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+  color: #696969
+}
+  svg.material-icons {
     height: 24px;
     width: auto;
   }
@@ -173,6 +182,7 @@ svg.material-icons {
 
     .toggle-boton{
         min-width: 286.766px;
+        max-width: 320px;
         height: 48px;
     }
   

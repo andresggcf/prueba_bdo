@@ -14,6 +14,7 @@ h4,
 h5,
 h6 {
   margin: 8px 0;
+  color: #696969
 }
 
 p {
@@ -267,7 +268,7 @@ svg#clouds {
 }
 
 .texto-titulo{
-  color: #333;
+  color:#333;
   font-weight: 500;
   margin: 0px 0px 5px 0px;
 }
@@ -276,6 +277,38 @@ svg#clouds {
   color: rgb(83, 83, 83);
   margin: 0px 0px -5px 0px;
   padding: 0px;
+}
+
+.divisor-otros{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.btn-azul{
+  background-color:#1673E0;
+  color:white;
+  font-weight: 500;
+  margin: 20px auto 20px auto;
+  width: 100%;
+
+}
+
+.center {
+  margin: 0px auto 20px auto;
+  padding: 10px;
+}
+
+.btn-circulo{
+  float: left;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px !important;
+  margin-right: 10px;
+}
+
+.mat-button-toggle-checked{
+  background-color: #1673E0;
 }
 
 
@@ -309,7 +342,25 @@ svg#clouds {
     display: flex;
   }
 
+  .divisor-otros{
+    max-width: 320px;
+  }
 
+  .footer-titulo, .footer-parrafo{
+    text-align: center;
+  }
+
+  .footer-parrafo{
+    font-size: 12px;
+  }
+
+  .center {
+    width: 90%;
+  }
+
+  .btn-circulo{
+    margin-top: 5px;
+  }
 
 }
 
@@ -332,4 +383,9 @@ svg#clouds {
     background-size: contain;
     background-repeat: no-repeat;
   }
+  .center {
+    width: 95%;
+  }
+
+  
 }

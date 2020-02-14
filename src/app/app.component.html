@@ -23,15 +23,26 @@
     <h1 class = "texto-titulo">Andrés</h1>
   </div>
   <div class="div-toggle">
-    <mat-slide-toggle>Ver otros productos</mat-slide-toggle>
+     <mat-button-toggle (click)="toggleBancos()" id="btca" class ="toggle-boton btn-circulo"></mat-button-toggle>
+    <p class="footer-parrafo">Ver productos de otros bancos</p>
   </div>
 
   <app-card class="app-card"></app-card>
   
-  <app-otros-card class = "app-otros-card"></app-otros-card>
-
+  <div *ngIf="show" class="divisor-otros">
+    <mat-divider class="divisor-otros"></mat-divider>
+    <h3>Productos de Otros Bancos</h3>
+    <app-otros-card class = "app-otros-card"></app-otros-card>
+  </div>
 
   <!-- Footer -->
-  <footer>
+  <footer class = "center">
+    <div class="divisor-otros center">
+      <mat-divider class="divisor-otros"></mat-divider>
+      <h4 class="footer-titulo"><b class="gris">¿No encuentras lo que estás buscando?</b></h4>
+      <p class = "footer-parrafo">Seguimos trabajando para tener todo lo que necesitas en esta nueva experiencia. Mientra tanto, puedes buscar lo que no encuentres en la versión anterior. </p>
+      <mat-button-toggle  id="btca" class ="toggle-boton btn-azul">Ver Versión Anterior</mat-button-toggle>
+
+    </div>
   </footer>
 </div>
